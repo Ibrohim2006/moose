@@ -113,14 +113,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
-    BASE_DIR / 'staticfiles',
+    BASE_DIR / 'static'
 ]
+MEDIA_ROOT = 'media'
 MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'
 
-BOT_ID = "6912718237:AAH2v2r4x2TuYnHqfpbi1ci43AxYKEiBWoE"
+BOT_ID = "66912718237:AAH2v2r4x2TuYnHqfpbi1ci43AxYKEiBWoE"
 CHAT_ID = "5093765356"
 TELEGRAM_API_URL = "https://api.telegram.org/bot{}/sendMessage?text={}&chat_id={}"
 
