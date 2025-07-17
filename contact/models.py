@@ -1,8 +1,10 @@
 from django.db import models
+
+from blog.models import TimestampModel
 from .utils import phone_number_validation
 
 
-class Contact(models.Model):
+class Contact(TimestampModel):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField()
@@ -10,9 +12,6 @@ class Contact(models.Model):
     message = models.TextField()
 
     is_solved = models.BooleanField(default=False)
-
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.first_name}::{self.phone_number}"

@@ -6,13 +6,17 @@ from .models import *
 def index_view(request):
     posts = Post.objects.filter(is_published=True)
     d = {
-        'posts': posts
+        'posts': posts,
+        'index': 'active'
     }
     return render(request, 'index.html', context=d)
 
 
 def about_view(request):
-    return render(request, 'about.html')
+    d = {
+        'about': 'active'
+    }
+    return render(request, 'about.html', context=d)
 
 
 def blog_view(request):

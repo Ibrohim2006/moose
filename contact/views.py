@@ -12,4 +12,7 @@ def contact_view(request):
         contact.save()
         send_message_telegram(contact)
         return redirect('/contact')
-    return render(request, 'contact.html')
+    d = {
+        'contact': 'active'
+    }
+    return render(request, 'contact.html', context=d)
